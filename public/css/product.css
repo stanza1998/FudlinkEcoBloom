@@ -1,0 +1,40 @@
+.product {
+    justify-content: space-between;
+    margin-top: 2rem;
+    display: flex; /* Ensure the .product has display: flex for flex properties to work */
+}
+
+.product img {
+    width: 35%;
+    min-width: 230px;
+    transition: transform 0.3s ease-in-out; /* Add transition for a smooth effect */
+}
+
+.product img:hover {
+    transform: scale(1.2); /* Increase the scale factor for a zoom-in effect */
+}
+
+.details {
+    width: 60%;
+    align-self: flex-start;
+    font-family: "Roboto", sans-serif;
+}
+
+.cta {
+    margin-left: 0;
+}
+
+@media (max-width: 645px) {
+    .product {
+        flex-direction: column;
+    }
+
+    .product img {
+        width: 100%;
+        transform: none; /* Reset transform on hover for smaller screens */
+    }
+
+    .details {
+        width: 100%;
+    }
+}

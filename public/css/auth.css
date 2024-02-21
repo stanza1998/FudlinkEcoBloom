@@ -1,0 +1,76 @@
+body {
+    margin: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    background-color: #f0f0f0; /* Set a background color */
+}
+
+.card {
+    padding: 2rem;
+    /* border-radius: 1rem; */
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+    width: 400px;
+    max-width: 90vw;
+    background-color: #fff; /* Set a background color */
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.02); /* Add a subtle hover effect */
+}
+
+#logo {
+    display: block;
+    width: 5rem;
+    margin: auto;
+}
+
+#logo img {
+    display: block;
+    width: 100%;
+}
+
+input {
+    margin-top: 1rem;
+    padding: 1rem;
+    /* border-radius: 0.5rem; */
+    border: 2px solid #ccc;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.fill_data {
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.fill_data:focus {
+    outline: none;
+    border: 2px solid #50a5db;
+}
+
+.status-message {
+    color: red;
+}
+
+.submit {
+    width: fit-content;
+    margin-top: 1.5rem;
+    margin-left: auto;
+}
+
+input[type="submit"] {
+    cursor: pointer;
+    border: none;
+    padding: 0.7rem 1rem;
+    color: white;
+    font-weight: bold;
+    background-color: #50a5db;
+    transition: background-color 0.3s ease-in-out;
+}
+
+input[type="submit"]:hover {
+    background-color: #407ca5; /* Change color on hover */
+}

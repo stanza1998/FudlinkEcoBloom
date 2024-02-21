@@ -1,0 +1,97 @@
+.hero {
+    display: grid;
+    place-items: center;
+    height: 70vh;
+    text-align: center;
+    color: white;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url("../img/environmentally.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    font-family: monospace;
+    /* border-bottom-right-radius: 5rem; Adjust the value as needed */
+    /* border-bottom-left-radius: 5rem; Adjust the value as needed */
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.hero h3 {
+    font-size: 1.5em;
+    color: white;
+    font-family: monospace;
+    margin-top: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero h3 span {
+    display: inline-block;
+    transform: translateY(100%);
+    animation: slideUp 10s linear infinite; /* Adjust the duration as needed */
+}
+
+@keyframes slideUp {
+    to {
+        transform: translateY(-100%);
+    }
+}
+
+.home-button {
+    background: black;
+}
+
+.hero a {
+    width: 100px;
+    font-size: 1.5em;
+    background-color: #770014;
+    color: #ffffff;
+    font-weight: bolder;
+    padding: 0.5em 1em;
+    margin: 0 auto;
+}
+
+.home-grid {
+    margin-top: 40px;
+    display: grid;
+    gap: 50px;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.category {
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    height: 250px;
+    border-radius: 0.5rem;
+    transition: transform 100ms ease-out;
+
+}
+.category .screen {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.384);
+}
+.category h3 {
+    position: absolute;
+    margin: 10px;
+    color: white;
+    font-family: monospace;
+    font-size: 1.5em;
+    bottom: 0;
+}
+
+.category:hover {
+    transform: translateY(-10px);
+}
+
+@media (max-width: 720px) {
+    .home-grid {
+        display: grid;
+        gap: 25px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
