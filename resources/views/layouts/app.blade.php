@@ -26,13 +26,13 @@
         {{-- main contents --}}
         {{ $slot }}
         {{-- main contents --}}
-        <footer style="background: white">
+        <footer style="background: black">
             <div class="footer-links _container flex_align">
                 @each('components.temp', range(1, 4), 'link')
             </div>
             <div class="site-info">
                 <a class="logo-link d-b" href="#">
-                    <img class="d-b" src="{{ asset('img/logo-3.png') }}" alt="user">
+                    <img class="d-b" src="{{ asset('img/logo-1.png') }}" alt="user">
                 </a>
                 <p style="color:grey">Discover sustainable comfort and style with our eco-friendly home goods
                     collection.</p>

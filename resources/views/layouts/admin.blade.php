@@ -35,9 +35,9 @@
 
         <nav>
             <span class="ham material-icons">menu</span>
-            {{-- <a id="nav_logo" class="d-b" href="#"> --}}
-            <h2 style="color:white">ECOBLOOM</h2>
-            {{-- </a> --}}
+            <a id="nav_logo" class="d-b" href="#">
+                <img style="height: 40px" class="d-b" src="{{ asset('img/logo-1.png') }}" alt="user">
+            </a>
             <div class="nav_admin">
                 {{-- <img class="fit_img admin_img" src="{{ asset('storage/avatar/admin.jpg'); }}" alt="admin_img"> --}}
             </div>
