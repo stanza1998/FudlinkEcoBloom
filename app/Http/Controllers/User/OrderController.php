@@ -10,14 +10,14 @@ use Illuminate\Support\Facades\Auth;
 class OrderController extends Controller
 {
 
-    
+
     private $status_array = [
         "N" => ['PENDING', 'blue'],
         "C" => ['CANCELED', 'red'],
         "P" => ['PAID', 'limegreen'],
 	    "D" => ['DELIVERED', 'limegreen']
     ];
-    
+
     private $transaction_mode = [
         "COD" => "Cash on Delivery"
     ];
@@ -46,7 +46,7 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
-        
+
         abort_if($this->checkOrder($order), 404);
 
         return view('user.view-order', [
@@ -69,15 +69,30 @@ class OrderController extends Controller
 
         $order->status = 'C';
         $order->save();
-        
+
         return back();
 
     }
 
     private function checkOrder(Order $order){
-        /** @var App\Models\User $user */ 
+        /** @var App\Models\User $user */
         $user = Auth::user();
         return ! $user->is($order->user);
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

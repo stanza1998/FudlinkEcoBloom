@@ -54,13 +54,11 @@
                 </div>
                 @else
                 <div style="display: grid;place-items:center">
-                    <img style="max-width: 100%" src="{{ asset('img/no-product-found.jpg') }}" alt="">
+                    <img style="max-width: 100% " src="{{ asset('img/no-product-found.jpg') }}" alt="">
                 </div>
                 @endif
             </div>
         </main>
     </section>
-    {{---------------------
-            $slot
-        --------------------}}
+
 </x-app-layout>

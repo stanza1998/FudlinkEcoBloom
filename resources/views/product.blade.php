@@ -21,6 +21,11 @@
                             @csrf
                             <button type="submit" class="cta">Add to Cart</button>
                         </form>
+                        <form>
+                            <button class="cta" data-product="{{ $product->id }}">
+                                Reviews
+                            </button>
+                        </form>
                         @endauth
                         @guest
                         <button class="cta" onclick="addToCart({{$product->id}})" data-product="{{ $product->id }}">Add

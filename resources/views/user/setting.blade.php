@@ -1,13 +1,13 @@
 <x-user-layout>
-    {{--------------------- 
-        $slot 
+    {{---------------------
+        $slot
     --------------------}}
     <h1>Setting Page</h1>
     <form action="{{ route('logout') }}" method="post">
         @csrf
-        <input class="logout" type="submit" value="Logout">
+        <input style="background:red; border:none; padding:10px; color:white; cursor:pointer;" class="logout" type="submit" value="Logout">
     </form>
-    {{--------------------- 
-        $slot 
+    {{---------------------
+        $slot
     --------------------}}
 </x-user-layout>

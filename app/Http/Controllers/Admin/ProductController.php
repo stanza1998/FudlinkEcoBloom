@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
-    
+
     public function index()
     {
         return view('admin.products.products', [
@@ -19,7 +19,7 @@ class ProductController extends Controller
         ]);
     }
 
-   
+
     public function create()
     {
         return view('admin.products.create', [
@@ -27,7 +27,7 @@ class ProductController extends Controller
         ]);
     }
 
-   
+
     public function store(Request $request)
     {
         $validated = $request->validate([
@@ -38,6 +38,7 @@ class ProductController extends Controller
             'stock_quantity' => 'required|numeric|min:0',
             'discount' => 'multiple_of:5|min:0',
             'category_id' => 'required|exists:categories,id'
+            //review array
         ]);
 
         $path = Storage::putFile('products', $validated['image']);
@@ -60,11 +61,11 @@ class ProductController extends Controller
         return redirect()->route('admin.products.index')->with('status', 'product added successfully');
     }
 
-    
-    // public function show(Product $product)
-    
 
-    
+    // public function show(Product $product)
+
+
+
     public function edit(Product $product)
     {
         return view('admin.products.edit', [
@@ -73,7 +74,7 @@ class ProductController extends Controller
         ]);
     }
 
-    
+
     public function update(Request $request, Product $product)
     {
         $validated = $request->validate([
@@ -83,9 +84,10 @@ class ProductController extends Controller
             'price' => 'required|numeric|min:0',
             'stock_quantity' => 'required|numeric|min:0',
             'discount' => 'multiple_of:5|min:0',
-            'category_id' => 'required|exists:categories,id'
+            'category_id' => 'required|exists:categories,id',
+            //review[]
         ]);
-        
+
         $product->title = $validated['title'];
 
         if($request->has(['image', 'discount'])){
@@ -108,7 +110,7 @@ class ProductController extends Controller
         return redirect()->route('admin.products.index')->with('status', 'product updated successfully');
     }
 
-   
+
     public function destroy(Product $product)
     {
         Storage::delete($product->image);

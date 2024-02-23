@@ -20,6 +20,8 @@ use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\ProductDetailsController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\User\OrderController;
+use App\Http\Controllers\User\ReviewController;
+
 use App\Models\Category;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
@@ -47,25 +49,7 @@ Route::middleware('guest')->group(function(){
 
 Route::middleware('auth')->group(function(){
 
-    // email verification
-    Route::get('/verify-email', function (Request $request) {
-
-        return $request->user()->hasVerifiedEmail()
-        ? redirect()->intended(RouteServiceProvider::HOME)
-        : view('auth.verify-email');
-
-    })->name('verification.notice');
-
-    Route::post('/email/verification-notification', [EmailVerificationNotificationController::class, 'store'])
-                ->middleware('throttle:6,1')
-                ->name('verification.send');
-
-    Route::get('/verify-email/{id}/{hash}', [VerifyEmailController::class, '__invoke'])
-                ->middleware(['signed', 'throttle:6,1'])
-                 ->name('verification.verify');
-
-
-    // Admin routes
+     // Admin routes
     Route::middleware('admin')->name('admin.')->prefix('admin')->group(function(){
 
         Route::get('/dashboard', DashboardController::class)->name('dashboard');
@@ -92,16 +76,18 @@ Route::middleware('auth')->group(function(){
         Route::resource('orders', OrderController::class)->only(['index', 'show', 'update']);
         Route::view('/ship_info', 'user.ship_info')->name('ship_info');
         Route::view('/setting', 'user.setting')->name('setting');
+        //reviews
+        Route::get("/review", [ReviewController::class, 'index'])->name('review.index');
+        Route::get("/review/create", [ReviewController::class, 'create'])->name('review.create');
+        Route::post("/review", [ReviewController::class, 'store'])->name('review.store');
+
 
     });
 
+    Route::get('/checkout', [CheckoutController::class, 'showForm'])->name('checkout');
+    Route::post('/checkout', [CheckoutController::class, 'createOrder'])->name('checkout');
 
-    // Route::middleware('verified')->group(function(){
 
-        Route::get('/checkout', [CheckoutController::class, 'showForm'])->name('checkout');
-        Route::post('/checkout', [CheckoutController::class, 'createOrder'])->name('checkout');
-
-    // });
 
     //GET USER ADDRESS
     Route::get('/address', function(){
@@ -133,10 +119,4 @@ Route::middleware('auth')->group(function(){
 
 });
 
-// ORDER MAIL PREVIEW
 
-// Route::get('/mailable', function () {
-//     $order = App\Models\Order::find(1);
-
-//     return new App\Mail\OrderShipped($order);
-// });

@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 :root {
-    --head_col: #333333;
-    --site_col_1: #3da8f3;
+     --head_col: #333333;
+    --site_col_1: green;
     --site_text_1: #b3b3b3;
 }
 
@@ -24,6 +24,49 @@ ul {
 .flex_align {
     display: flex;
     align-items: center;
+}
+/* Add a hover effect to the list items */
+.top_nav .flex_align li:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+}
+
+/* Style the links */
+.top_nav .flex_align li a {
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+/* Add styles for the icons */
+.top_nav .flex_align li a .material-icons {
+    font-size: 24px;
+}
+
+/* Add styles for the text */
+.top_nav .flex_align li a div {
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* Add a subtle box-shadow to the list items */
+.top_nav .flex_align li {
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 0 10px;
+    background-color: #fff;
+}
+
+/* Add a hover effect to the links */
+.top_nav .flex_align li a:hover {
+    color: #6c63ff;
+}
+
+/* Add a transition for smooth hover effects */
+.top_nav .flex_align li a {
+    transition: color 0.3s ease;
 }
 
 ._container {
@@ -54,7 +97,7 @@ a {
 .product_card {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 400px;
-    font-family: 'Helvetica', sans-serif;
+    font-family: "Helvetica", sans-serif;
     text-align: left;
     font-size: 1.4em;
     cursor: pointer;

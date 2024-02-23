@@ -1,76 +1,107 @@
-main{
-    font-family: 'Roboto', sans-serif;
+main {
+    font-family: "Roboto", sans-serif;
 }
-h2{
+h2 {
     font-weight: 400;
 }
-.form_group{
-    margin: .5rem 0;
+.form_group {
+    margin: 0.5rem 0;
 }
-.form_group label{
+.form_group label {
     display: block;
     font-size: 18px;
     color: var(--head_col);
 }
-.form_group input{
+.form_group input {
     width: 100%;
     box-sizing: border-box;
-    margin: .5em 0;
+    margin: 0.5em 0;
     font-size: 16px;
     padding: 8px;
 }
-.two_form{
+.two_form {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.two_form .form_group{
+.two_form .form_group {
     width: 45%;
 }
-.checkout_order{
+.checkout_order {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
 }
-.checkout{
+.checkout {
     width: 50%;
 }
-.order{
+.order {
     display: grid;
     place-items: center;
     width: 45%;
 }
-.checkout button{
+.checkout button {
     display: block;
     margin: 1rem 0;
     width: 100%;
     border: none;
     padding: 0.5em;
     font-size: 1.2em;
-    background: var(--head_col);
+    background: var(--site_col_1);
     color: white;
     cursor: pointer;
 }
-.order .card{
+.order .card {
     min-width: 300px;
     margin: 1.5rem;
-    border: 2px solid var(--head_col);
-    padding: 10px;
+    border: 2px solid var(--site_col_1);
+    padding: 20px;
     text-align: center;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
-.order .flex_align{
+
+.order .card:hover {
+    transform: translateY(-5px);
+}
+
+.order .flex_align {
+    display: flex;
     justify-content: space-between;
-    margin: 5px 0;
+    align-items: center;
+    margin: 10px 0;
 }
-@media (max-width: 850px){
-    .checkout_order{
+
+.order .flex_align strong {
+    font-weight: bold;
+}
+
+.order .flex_align span,
+.order .flex_align h3 {
+    font-size: 16px;
+}
+
+.order .flex_align h3 {
+    margin-top: 5px;
+    color: var(--site_col_1);
+}
+
+.order .flex_align strong,
+.order .flex_align span {
+    color: #555;
+}
+
+@media (max-width: 850px) {
+    .checkout_order {
         flex-direction: column;
         align-items: center;
     }
-    .checkout{
+    .checkout {
         width: 100%;
     }
-    .order{
+    .order {
         width: 100%;
     }
 }

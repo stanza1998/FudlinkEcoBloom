@@ -5,7 +5,8 @@ table{
 }
 thead{
     color: white;
-    background-color: var(--head_col);
+    background-color: var(--site_col_1);
+
 }
 td{
     padding: .5rem 5px;
@@ -51,7 +52,7 @@ table input{
 }
 .checkout a{
     color: white;
-    background-color: var(--head_col);
+    background-color: var(--site_col_1);
     border-radius: 2rem;
     padding: 8px 20px;
 }

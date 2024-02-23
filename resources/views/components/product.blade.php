@@ -9,7 +9,6 @@
     <p class="price">{{ "$".$product->price }}</p>
     <div class="reviews">
         <span>4.5 stars</span>
-        <br />
         <div class="stars">★★★★☆</div>
     </div>
 </a>
